@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cercle Scientifique || À Propos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-600 text-white shadow-lg fixed top-0 left-0 w-full z-50">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <h1 class="text-2xl md:text-3xl font-extrabold tracking-wide">
+                <span class="text-yellow-400">Unilu</span> Cercle Scientifique
+            </h1>
+    
+            <button id="menu-btn" class="block md:hidden focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+    
+            <!-- Navigation -->
+            <nav id="menu" class="hidden absolute top-16 right-6 w-3/4 bg-white text-gray-800 rounded-lg shadow-lg md:static md:w-auto md:bg-transparent md:shadow-none md:flex md:space-x-8">
+                <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 p-4 md:p-0">
+                    <li><a href="index.html" class="hover:text-yellow-400 transition-colors">Accueil</a></li>
+                    <li><a href="about.html" class="hover:text-yellow-400 transition-colors">À propos</a></li>
+                    <li><a href="evenement.html" class="hover:text-yellow-400 transition-colors">Événements</a></li>
+                    <li><a href="contact.html" class="hover:text-yellow-400 transition-colors">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section d'introduction -->
+    <header class="bg-[rgb(8,8,41)] text-white py-16 mt-16">
+        <div class="container mx-auto text-center animate-fade-in">
+            <h1 class="text-3xl font-bold">À propos de Math-Info</h1>
+            <p class="mt-2">Découvrez notre mission, notre histoire et notre équipe.</p>
+        </div>
+    </header>
+
+    <!-- Section Présentation -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto text-center animate-fade-in">
+            <h2 class="text-3xl font-bold text-gray-800">📘 Notre Mission</h2>
+            <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+                Inspirer et éduquer les esprits brillants de demain grâce à des outils modernes, des ressources éducatives et une communauté dynamique.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section Notre Histoire -->
+    <section class="py-16">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="animate-fade-in">
+                <h2 class="text-3xl font-bold text-gray-800">💡 Notre Histoire</h2>
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    Fondée en [année], la communauté Math-Info a vu le jour pour répondre au besoin croissant d'un espace dédié aux passionnés de mathématiques et d'informatique.
+                </p>
+            </div>
+            <img src="assets/img/cercle_scientifique_math_info_logo.jpeg" alt="Notre histoire" class="rounded-lg shadow-lg hover:scale-105 transition-transform">
+        </div>
+    </section>
+
+    <!-- Section Équipe -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto text-center animate-fade-in">
+            <h2 class="text-3xl font-bold text-gray-800">👩‍💻 Notre Équipe</h2>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transition-transform">
+                    <img src="assets/img/team1.jpg" alt="Membre 1" class="w-32 h-32 mx-auto rounded-full">
+                    <h3 class="mt-4 text-xl font-bold text-blue-800">Nom Membre 1</h3>
+                    <p class="text-gray-600">Fondateur</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transition-transform">
+                    <img src="assets/img/team2.jpg" alt="Membre 2" class="w-32 h-32 mx-auto rounded-full">
+                    <h3 class="mt-4 text-xl font-bold text-blue-800">Nom Membre 2</h3>
+                    <p class="text-gray-600">Président</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transition-transform">
+                    <img src="assets/img/team3.jpg" alt="Membre 3" class="w-32 h-32 mx-auto rounded-full">
+                    <h3 class="mt-4 text-xl font-bold text-blue-800">Nom Membre 3</h3>
+                    <p class="text-gray-600">Secrétaire</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Section Appel à l'Action -->
+    <section class="bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 text-white py-16">
+        <div class="container mx-auto text-center animate-fade-in">
+            <h2 class="text-3xl font-bold">Rejoignez notre aventure 🚀</h2>
+            <p class="mt-4">Partagez vos idées, apprenez des autres et grandissez avec nous.</p>
+            <a href="contact.html" class="mt-6 inline-block bg-yellow-500 text-white py-3 px-8 rounded-full hover:bg-yellow-400 transition-transform transform hover:scale-110 shadow-lg">
+                Nous Contacter
+            </a>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6">
+        <div class="container mx-auto">
+            
+            <div class="flex justify-center mt-4 space-x-6">
+                <a href="https://www.facebook.com/profile.php?id=61570028531958" class="hover:text-gray-400">Facebook |</a>
+                <a href="https://www.linkedin.com/company/cercle-scientifique-math-info/" class="hover:text-gray-400">LinkedIn</a>
+                
+            </div>
+            <p>&copy; 2025 Math-Info Cercle Scientifique || Andrix Ng Production.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

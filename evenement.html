@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cercle Scientifique||evenements</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .menu-enter {
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .menu-enter-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .menu-exit {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .menu-exit-active {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-600 text-white shadow-lg fixed top-0 left-0 w-full z-50">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <h1 class="text-2xl md:text-3xl font-extrabold tracking-wide">
+                <span class="text-yellow-400">Unilu</span> Cercle Scientifique
+            </h1>
+    
+            <button id="menu-btn" class="block md:hidden focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-400" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+    
+            <!-- Liens de navigation -->
+            <nav id="menu" class="hidden absolute top-16 right-6 w-3/4 bg-white text-gray-800 rounded-lg shadow-lg md:static md:w-auto md:bg-transparent md:shadow-none md:flex md:space-x-8">
+                <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 p-4 md:p-0">
+                    <li><a href="index.html" class="hover:text-yellow-400 transition-colors">Accueil</a></li>
+                    <li><a href="about.html" class="hover:text-yellow-400 transition-colors">À propos</a></li>
+                    <li><a href="evenement.html" class="hover:text-yellow-400 transition-colors">Événements</a></li>
+                    <li><a href="contact.html" class="hover:text-yellow-400 transition-colors">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Titre principal -->
+    <section class="bg-[rgb(8,8,41)] text-white py-16 mt-16 text-center">
+        <h1 class="text-3xl font-bold">📅 Nos Événements</h1>
+        <p class="mt-2">Découvrez nos événements passés et à venir.</p>
+    </section>
+
+    <!-- Événements à venir -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-800">🔜 À Venir</h2>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="assets/img/event1.jpg" alt="Événement 1" class="w-full h-40 object-cover rounded">
+                    <h3 class="mt-4 text-xl font-bold text-blue-800">Conférence IA & Mathématiques</h3>
+                    <p class="text-gray-600 mt-2">Date : 10 Février 2025</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="assets/img/event2.jpg" alt="Événement 2" class="w-full h-40 object-cover rounded">
+                    <h3 class="mt-4 text-xl font-bold text-blue-800">Hackathon Développement Web</h3>
+                    <p class="text-gray-600 mt-2">Date : 25 Mars 2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6">
+        <div class="container mx-auto">
+            
+            <div class="flex justify-center mt-4 space-x-6">
+                <a href="https://www.facebook.com/profile.php?id=61570028531958" class="hover:text-gray-400">Facebook |</a>
+                <a href="https://www.linkedin.com/company/cercle-scientifique-math-info/" class="hover:text-gray-400">LinkedIn</a>
+                
+            </div>
+            <p>&copy; 2025 Math-Info Cercle Scientifique || Andrix Ng Production.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        let isMenuOpen = false;
+
+        menuBtn.addEventListener('click', () => {
+            if (!isMenuOpen) {
+                menu.classList.remove('hidden', 'menu-exit-active');
+                menu.classList.add('menu-enter', 'menu-enter-active');
+                isMenuOpen = true;
+            } else {
+                menu.classList.remove('menu-enter-active');
+                menu.classList.add('menu-exit', 'menu-exit-active');
+                setTimeout(() => {
+                    menu.classList.add('hidden');
+                }, 300);
+                isMenuOpen = false;
+            }
+        });
+    </script>
+</body>
+</html>

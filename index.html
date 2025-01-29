@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="frame-src https://www.linkedin.com/;">
+
+    <title>Cercle Scientifique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Menu Animation */
+        .menu-enter {
+            opacity: 0;
+        }
+
+        .menu-exit {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .menu-exit-active {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        /* Card Hover Effect */
+        .card-hover:hover {
+            transform: translateY(-5px) scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Button Hover Effect */
+        .btn-hover:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes bounceDelay {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .animate-fade-in-delay {
+        animation: fadeIn 1s ease-in-out 0.5s;
+        animation-fill-mode: both;
+    }
+
+    .animate-bounce-delay {
+        animation: bounceDelay 1.5s infinite;
+    }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <header
+        class="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-600 text-white shadow-lg fixed top-0 left-0 w-full z-50">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <h1 class="text-2xl md:text-3xl font-extrabold tracking-wide">
+                <span class="text-yellow-400">Unilu</span> Cercle Scientifique
+            </h1>
+
+            <button id="menu-btn" class="block md:hidden focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-400" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+
+            <nav id="menu"
+                class="hidden absolute top-16 right-6 w-3/4 bg-white text-gray-800 rounded-lg shadow-lg md:static md:w-auto md:bg-transparent md:shadow-none md:flex md:space-x-8">
+                <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 p-4 md:p-0">
+                    <li><a href="index.html" class="hover:text-yellow-400 transition-colors">Accueil</a></li>
+                    <li><a href="about.html" class="hover:text-yellow-400 transition-colors">À propos</a></li>
+                    <li><a href="evenement.html" class="hover:text-yellow-400 transition-colors">Événements</a></li>
+                    <li><a href="contact.html" class="hover:text-yellow-400 transition-colors">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section Hero -->
+    <section class="bg-[rgb(8,8,41)] text-white text-center py-20 mt-16">
+        <h2 class="text-4xl md:text-5xl font-extrabold animate-bounce">
+            Bienvenue sur notre plateforme de <span class="text-yellow-400">Math-Info</span>
+        </h2>
+        <p class="mt-4 text-lg md:text-xl">Explorez les dernières publications, événements, et rejoignez notre
+            communauté pour transformer vos idées en réalisations.</p>
+        <a href="evenement.html"
+            class="mt-6 inline-block bg-yellow-500 text-white py-2 px-6 rounded-full hover:bg-yellow-400 transition-colors btn-hover">
+            Explorer nos evenements
+        </a>
+    </section>
+
+<!-- Section Actualités -->
+<section class="container mx-auto py-16">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">🚀 Actualités & Événements Récents</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Article 1 -->
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow transform hover:scale-105 duration-300">
+            <img src="assets/img/1737490039200.jpeg" alt="Bootcamp Git & GitHub" class="w-full h-48 object-cover rounded-md mb-4">
+            <h3 class="text-xl font-semibold text-blue-800 mb-2">Bootcamp Git & GitHub pour Débutants</h3>
+            <p class="text-gray-600">
+                Apprenez à déployer vos sites Web efficacement avec une formation pratique. La seule façon de faire du bon travail est d'aimer ce que vous faites.
+            </p>
+            <a href="https://www.linkedin.com/posts/cercle-scientifique-math-info_concours-git-github-activity-7287561440125693952-dybC?utm_source=share&utm_medium=member_desktop" 
+               class="text-blue-600 hover:underline mt-4 block transition-opacity duration-300 hover:opacity-80">Lire plus</a>
+        </div>
+
+        <!-- Article 2 -->
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow transform hover:scale-105 duration-300">
+            <img src="assets/img/1734442197863.jpeg" alt="FAQ & Outils Informatiques" class="w-full h-48 object-cover rounded-md mb-4">
+            <h3 class="text-xl font-semibold text-blue-800 mb-2">FAQ & Présentation des Outils Informatiques</h3>
+            <p class="text-gray-600">
+                Bien s'outiller pour mieux réussir : posez vos questions et découvrez des outils essentiels.
+            </p>
+            <a href="https://www.linkedin.com/posts/cercle-scientifique-math-info_informatique-innovation-faq-activity-7274777856801480705-UV0r?utm_source=share&utm_medium=member_desktop" 
+               class="text-blue-600 hover:underline mt-4 block transition-opacity duration-300 hover:opacity-80">Lire plus</a>
+        </div>
+
+        <!-- Article 3 -->
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow transform hover:scale-105 duration-300">
+            <img src="assets/img/1730206356317.jpeg" alt="Vue.js Framework" class="w-full h-48 object-cover rounded-md mb-4">
+            <h3 class="text-xl font-semibold text-blue-800 mb-2">Introduction au Framework Vue.js</h3>
+            <p class="text-gray-600">
+                Rejoignez-nous pour explorer Vue.js 3 avec Elvin Kyungu, un développeur passionné de front-end.
+            </p>
+            <a href="https://www.linkedin.com/posts/cercle-scientifique-math-info_bonne-nouvelle-rejoignez-nous-pour-une-activity-7257011447279280130-jX-1?utm_source=share&utm_medium=member_desktop" 
+               class="text-blue-600 hover:underline mt-4 block transition-opacity duration-300 hover:opacity-80">Lire plus</a>
+        </div>
+
+        <!-- Article 4 -->
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow transform hover:scale-105 duration-300">
+            <img src="assets/img/1725066771976.jpeg" alt="Grande Conférence" class="w-full h-48 object-cover rounded-md mb-4">
+            <h3 class="text-xl font-semibold text-blue-800 mb-2">La Grande Conférence</h3>
+            <p class="text-gray-600">
+                Une conférence qui transformera votre vision technologique, accueillant le Professeur Dikanga Kazadi Jean-Marie.
+            </p>
+            <a href="https://www.linkedin.com/posts/cercle-scientifique-math-info_confaezrence2024-techpassion-activity-7231898331851976704-oltY?utm_source=share&utm_medium=member_desktop" 
+               class="text-blue-600 hover:underline mt-4 block transition-opacity duration-300 hover:opacity-80">Lire plus</a>
+        </div>
+    </div>
+</section>
+
+<section class="bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 text-white py-16">
+    <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-extrabold mb-4 animate-fade-in">
+            🌟 Rejoignez notre communauté aujourd'hui !
+        </h2>
+        <p class="mt-4 text-lg animate-fade-in-delay">
+            Découvrez un monde d'opportunités, collaborez avec des esprits brillants et réalisez vos projets scientifiques.
+        </p>
+        <a href="contact.html" 
+           class="mt-6 inline-block bg-yellow-500 text-white py-3 px-8 rounded-full hover:bg-yellow-400 transition-transform transform hover:scale-110 shadow-lg animate-bounce-delay">
+            Devenir Membre
+        </a>
+    </div>
+</section>
+<footer class="bg-gray-800 text-white text-center py-6">
+    <div class="container mx-auto">
+        
+        <div class="flex justify-center mt-4 space-x-6">
+            <a href="https://www.facebook.com/profile.php?id=61570028531958" class="hover:text-gray-400">Facebook |</a>
+            <a href="https://www.linkedin.com/company/cercle-scientifique-math-info/" class="hover:text-gray-400">LinkedIn</a>
+            
+        </div>
+        <p>&copy; 2025 Math-Info Cercle Scientifique || Andrix Ng Production.</p>
+    </div>
+</footer>
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        let isMenuOpen = false;
+
+        menuBtn.addEventListener('click', () => {
+            if (!isMenuOpen) {
+                menu.classList.remove('hidden', 'menu-exit-active');
+                menu.classList.add('menu-enter', 'menu-enter-active');
+                isMenuOpen = true;
+            } else {
+                menu.classList.remove('menu-enter-active');
+                menu.classList.add('menu-exit', 'menu-exit-active');
+                setTimeout(() => {
+                    menu.classList.add('hidden');
+                }, 300);
+                isMenuOpen = false;
+            }
+        });
+    </script>
+</body>
+
+</html>
